@@ -1,0 +1,670 @@
+/* ============================================================
+   META STORE INSPIRED — EXTERNAL STYLESHEET
+   ============================================================
+   All visual design lives here.
+   Heavy comments explain every major block and technique.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   0. CSS CUSTOM PROPERTIES (Design Tokens)
+   Central place for colors, spacing, and radii so the design
+   stays consistent and easy to tweak.
+   ------------------------------------------------------------ */
+:root {
+  /* Brand-ish colors (approximations, not official Meta palette) */
+  --color-blue: #0064e0;
+  --color-blue-hover: #0052b8;
+  --color-dark: #1c1e21;
+  --color-gray: #65676b;
+  --color-light-gray: #f0f2f5;
+  --color-white: #ffffff;
+  --color-overlay: rgba(0, 0, 0, 0.45);
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ------------------------------------------------------------
+   1. GLOBAL RESET & BASE
+   Modern minimal reset so every browser starts from the same place.
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+/* ------------------------------------------------------------
+   2. LAYOUT HELPERS
+   ------------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+
+/* ------------------------------------------------------------
+   3. SITE HEADER
+   Sticky top bar with logo, primary nav, and utility icons.
+   Uses flexbox for horizontal alignment.
+   ------------------------------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  gap: var(--space-lg);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Primary navigation */
+.primary-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.65;
+}
+
+/* Utility navigation (right side) */
+.utility-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.utility-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: opacity 0.2s ease;
+}
+
+.utility-link:hover {
+  opacity: 0.65;
+}
+
+/* Icon buttons */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-dark);
+  transition: background 0.15s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.region-btn {
+  width: auto;
+  padding: 0 10px;
+  gap: 4px;
+  border-radius: var(--radius-pill);
+}
+
+.region-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+
+/* ------------------------------------------------------------
+   4. HERO SECTION
+   Full-bleed promotional banner with image background,
+   dark overlay, left-aligned content, and large accent text.
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+/* Background image container */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Dark gradient overlay for text readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* Content block (left side) */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  padding: 0 48px;
+}
+
+/* Huge product title */
+.hero-title {
+  font-size: clamp(3.2rem, 8vw, 5.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin-bottom: 1.25rem;
+}
+
+/* Tagline */
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.45;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  max-width: 340px;
+}
+
+/* CTA button group */
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Large accent text on the right */
+.hero-accent {
+  position: absolute;
+  right: 6%;
+  bottom: 10%;
+  z-index: 2;
+  font-size: clamp(3.5rem, 11vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  opacity: 0.92;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ------------------------------------------------------------
+   5. BUTTON STYLES
+   Shared button system used across the page.
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-blue-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--color-white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--color-dark);
+  color: var(--color-dark);
+}
+
+.btn-outline:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.btn-large {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+}
+
+
+/* ------------------------------------------------------------
+   6. INTRO STRIP
+   Thin band of supporting text under the hero.
+   ------------------------------------------------------------ */
+.intro-strip {
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   7. SECTION HEADERS (shared)
+   ------------------------------------------------------------ */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.4rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+
+/* ------------------------------------------------------------
+   8. PRODUCT SHOWCASE GRID
+   Three equal cards with image, title, description, CTA.
+   ------------------------------------------------------------ */
+.products {
+  padding: var(--space-3xl) 0;
+  background: var(--color-light-gray);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.product-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e8e8e8;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  /* object-fit:/ cover; */
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .card-media img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: var(--space-lg);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 650;
+  margin-bottom: 4px;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  margin-bottom: var(--space-md);
+}
+
+
+/* ------------------------------------------------------------
+   9. FEATURES GRID (three benefit columns)
+   ------------------------------------------------------------ */
+.features {
+  padding: var(--space-3xl) 0;
+  background: var(--color-white);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.feature-item {
+  text-align: center;
+  padding: 0 var(--space-md);
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-light-gray);
+  color: var(--color-dark);
+  margin-bottom: var(--space-md);
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 650;
+  margin-bottom: 8px;
+}
+
+.feature-text {
+  font-size: 0.98rem;
+  color: var(--color-gray);
+  line-height: 1.55;
+}
+
+
+/* ------------------------------------------------------------
+   10. FRAME STYLES SECTION
+   Visual showcase of three frame silhouettes.
+   ------------------------------------------------------------ */
+.styles-section {
+  padding: var(--space-3xl) 0;
+  background: var(--color-light-gray);
+}
+
+.styles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.style-card {
+  text-align: center;
+}
+
+.style-image {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+  background: #ddd;
+}
+
+.style-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.style-card h3 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  margin-bottom: 4px;
+}
+
+.style-card p {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+}
+
+
+/* ------------------------------------------------------------
+   11. FINAL CTA BANNER
+   Strong closing section before footer.
+   ------------------------------------------------------------ */
+.final-cta {
+  padding: var(--space-3xl) 0;
+  background: var(--color-dark);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.final-cta p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: var(--space-xl);
+}
+
+
+/* ------------------------------------------------------------
+   12. FOOTER
+   ------------------------------------------------------------ */
+.site-footer {
+  padding: var(--space-xl) 0;
+  background: #111;
+  color: #999;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.footer-note {
+  margin-bottom: 8px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-copy {
+  opacity: 0.7;
+}
+
+
+/* ------------------------------------------------------------
+   13. RESPONSIVE BREAKPOINTS
+   Mobile-first adjustments for tablet and phone.
+   ------------------------------------------------------------ */
+
+/* Tablet and below */
+@media (max-width: 960px) {
+  .primary-nav {
+    display: none;
+    /* hide primary links on smaller screens for simplicity */
+  }
+
+  .product-grid,
+  .features-grid,
+  .styles-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    padding: 0 28px;
+  }
+
+  .hero-accent {
+    font-size: 3.2rem;
+    right: 24px;
+    bottom: 32px;
+  }
+
+  .utility-link {
+    display: none;
+    /* keep only icons on smaller screens */
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 78vh;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-accent {
+    font-size: 2.4rem;
+    right: 16px;
+    bottom: 24px;
+  }
+
+  .header-inner {
+    padding: 10px 16px;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+}

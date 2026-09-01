@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--
+    ============================================================
+    META STORE INSPIRED STATIC CLONE
+    Educational / visual recreation only
+    ============================================================
+    - External CSS only (styles.css)
+    - Heavy comments explaining every component
+    - Placeholder images (Unsplash / CSS gradients)
+    - Non-interactive (static visuals)
+    - No Meta trademarks, logos, or copyrighted assets used
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta Store Inspired | AI Glasses &amp; Quest Headsets</title>
+
+  <!-- External stylesheet - all visual styling lives here -->
+  <link rel="stylesheet" href="meta ai.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       1. SITE HEADER / TOP NAVIGATION
+       Sticky header that stays at the top while scrolling.
+       Contains three main zones:
+         - Left: Logo
+         - Center: Primary category links
+         - Right: Utility links + icons
+       ============================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo area -->
+      <a href="#" class="logo" aria-label="Home">
+        <!-- Simple infinity-style mark as placeholder for brand mark -->
+        <span class="logo-mark">∞</span>
+        <span class="logo-text">Meta</span>
+      </a>
+
+      <!-- Primary navigation (AI glasses, Quest, Apps) -->
+      <nav class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#glasses" class="nav-link">AI glasses</a></li>
+          <li class="nav-item"><a href="#quest" class="nav-link">Meta Quest</a></li>
+          <li class="nav-item"><a href="#apps" class="nav-link">Apps and games</a></li>
+        </ul>
+      </nav>
+
+      <!-- Utility / secondary navigation -->
+      <div class="utility-nav">
+        <a href="#" class="utility-link">Explore Meta</a>
+        <a href="#" class="utility-link">Support</a>
+
+        <!-- Icon buttons (search, region, cart, account) -->
+        <button class="icon-btn" aria-label="Search" title="Search">
+          <!-- Simple SVG search icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button class="icon-btn region-btn" aria-label="Region" title="Region">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span class="region-text">US</span>
+        </button>
+
+        <button class="icon-btn" aria-label="Cart" title="Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn" aria-label="Account" title="Account">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       2. HERO SECTION
+       Large full-bleed promotional banner.
+       Features:
+         - Dark lifestyle-style background (CSS gradient + photo)
+         - Large product title
+         - Tagline about the collaboration
+         - Two CTA buttons (Shop + Learn more)
+         - Large accent text on the right ("by Kylie")
+       ============================================================ -->
+  <section class="hero" id="glasses">
+    <!-- Background layer: photo + dark overlay for text contrast -->
+    <div class="hero-bg">
+      <!-- Using a free Unsplash photo of stylish eyewear as visual stand-in -->
+      <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1920&q=80"
+        alt="Stylish sunglasses close-up (placeholder)" class="hero-image">
+      <!-- Dark gradient overlay so white text remains readable -->
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Left-side content block -->
+    <div class="hero-content">
+      <!-- Main headline -->
+      <h1 class="hero-title">Meta Glasses</h1>
+
+      <!-- Supporting tagline -->
+      <p class="hero-subtitle">
+        The first ever AI glasses designed with<br>
+        Kylie Jenner.
+      </p>
+
+      <!-- Call-to-action buttons -->
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary">Shop</a>
+        <a href="#" class="btn btn-secondary">Learn more</a>
+      </div>
+    </div>
+
+    <!-- Large decorative text on the right (common modern hero pattern) -->
+    <div class="hero-accent">
+      by Kylie
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       3. FEATURE / INTRO STRIP
+       Short horizontal band that introduces the product value.
+       ============================================================ -->
+  <section class="intro-strip">
+    <div class="container">
+      <p class="intro-text">
+        Capture hands-free photos &amp; video in 3K, take calls, listen to music,
+        and talk to Meta AI — all from stylish everyday eyewear.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       4. PRODUCT SHOWCASE GRID
+       Three main product categories presented as cards.
+       Each card has:
+         - Image area
+         - Title
+         - Short description / price
+         - CTA button
+       ============================================================ -->
+  <section class="products" id="quest">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Explore the Meta Store</h2>
+        <p class="section-subtitle">AI glasses, smart eyewear &amp; mixed-reality headsets</p>
+      </header>
+
+      <div class="product-grid">
+
+        <!-- Card 1: Meta Glasses -->
+        <article class="product-card">
+          <div class="card-media">
+            <!-- Placeholder product image -->
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80"
+              alt="Modern sunglasses (placeholder for Meta Glasses)">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Meta Glasses</h3>
+            <p class="card-desc">Starting at $299 · Three frame styles</p>
+            <a href="#" class="btn btn-outline">Shop all</a>
+          </div>
+        </article>
+
+        <!-- Card 2: Ray-Ban style collaboration stand-in -->
+        <article class="product-card">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80"
+              alt="Classic sunglasses (placeholder)">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Iconic Frames</h3>
+            <p class="card-desc">Timeless designs with AI features</p>
+            <a href="#" class="btn btn-outline">Shop</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Quest headsets -->
+        <article class="product-card">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=800&q=80"
+              alt="VR headset (placeholder for Meta Quest)">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Meta Quest</h3>
+            <p class="card-desc">Mixed reality headsets &amp; accessories</p>
+            <a href="#" class="btn btn-outline">Shop devices</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       5. FEATURE HIGHLIGHTS (three-column benefits)
+       Clean feature blocks that describe key capabilities.
+       ============================================================ -->
+  <section class="features" id="apps">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Built for everyday life</h2>
+        <p class="section-subtitle">Hands-free capture, open-ear audio, and Meta AI</p>
+      </header>
+
+      <div class="features-grid">
+
+        <!-- Feature 1 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <!-- Simple camera icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="feature-title">Capture moments</h3>
+          <p class="feature-text">
+            Record photos and video in stunning resolution without reaching for your phone.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <!-- Speaker / audio icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Open-ear audio</h3>
+          <p class="feature-text">
+            Listen to music, take calls, and hear the world around you at the same time.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <!-- AI / chat icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Talk to Meta AI</h3>
+          <p class="feature-text">
+            Ask questions, get translations, and interact with an AI that sees what you see.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       6. STYLES / FRAME OPTIONS STRIP
+       Visual row showcasing different frame silhouettes.
+       ============================================================ -->
+  <section class="styles-section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Three distinct styles</h2>
+        <p class="section-subtitle">Classic, sport-forward, and slim silhouettes</p>
+      </header>
+
+      <div class="styles-grid">
+        <!-- Style 1 -->
+        <div class="style-card">
+          <div class="style-image">
+            <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=600&q=80"
+              alt="Rectangle frame style">
+          </div>
+          <h3>Adventurer</h3>
+          <p>Clean rectangle · Everyday classic</p>
+        </div>
+
+        <!-- Style 2 -->
+        <div class="style-card">
+          <div class="style-image">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80"
+              alt="Bold sport frame">
+          </div>
+          <h3>Fury</h3>
+          <p>Bold silhouette · Sport-forward</p>
+        </div>
+
+        <!-- Style 3 -->
+        <div class="style-card">
+          <div class="style-image">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+              alt="Slim oval frame">
+          </div>
+          <h3>Starfire</h3>
+          <p>Slim oval · Modern minimal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       7. FINAL CTA BANNER
+       Strong closing call-to-action before the footer.
+       ============================================================ -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to try them on?</h2>
+      <p>Explore all styles, lens options, and find a demo experience near you.</p>
+      <a href="#" class="btn btn-primary btn-large">Shop Meta Glasses</a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       8. FOOTER
+       Simple footer with disclaimer (important for educational clones).
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-note">
+        This is a static educational recreation for learning HTML &amp; CSS.
+        It is not affiliated with, endorsed by, or connected to Meta Platforms, Inc.
+      </p>
+      <p class="footer-copy">
+        Placeholder images sourced from Unsplash. All product names and trademarks
+        belong to their respective owners.
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

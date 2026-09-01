@@ -1,0 +1,153 @@
+form-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.Name {
+  background-color: red;
+}
+
+.Address {
+  background-color: red;
+}
+
+.School {
+  background-color: red;
+}
+
+input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: black;
+  color: whitesmoke;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: dimgray;
+}
+
+@media (max-width:480px) {
+  .form-section {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+    background-color: blue;
+  }
+
+  button {
+    width: 100%;
+    background-color: black;
+  }
+}
+
+form-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.Name {
+  background-color: red;
+}
+
+.Address {
+  background-color: red;
+}
+
+.School {
+  background-color: red;
+}
+
+input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: black;
+  color: whitesmoke;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: dimgray;
+}
+
+@media (max-width:480px) {
+  .form-section {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+    background-color: blue;
+  }
+
+  button {
+    width: 100%;
+    background-color: black;
+  }
+}

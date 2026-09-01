@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Summit Nigeria 2026 - Event Poster</title>
+  <link rel="stylesheet" href="assighnment.css">
+</head>
+
+<body>
+
+  <!-- 1. STICKY NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo-icon">⚡</span>
+      <h1>EventHub</h1>
+    </div>
+    <div class="nav-links">
+      <a href="#ticket-sec">Ticket</a>
+      <a href="#z-sec">Z-Index Lab</a>
+      <a href="#info-sec">About</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION (Provides initial scroll space) -->
+  <section class="filler hero-section">
+    <div class="hero-content">
+      <span class="hero-badge">Official Assignment Layout</span>
+      <h2>Mastering CSS Positioning & Stacking</h2>
+      <p>Scroll down to inspect sticky headers, absolute offsets, z-index hierarchies, and persistent floating layers.
+      </p>
+      <div class="scroll-indicator">↓ Scroll to Explore</div>
+    </div>
+  </section>
+
+  <!-- 5. STICKY SECTION HEADING 1 -->
+  <h2 class="sticky-heading" id="ticket-sec">
+    <span>🎫 Featured Event Ticket Card</span>
+    <span class="tag">Position: Relative + Absolute</span>
+  </h2>
+
+  <!-- TICKET SECTION -->
+  <section class="filler ticket-section">
+    <div class="ticket-card">
+      <!-- Absolute Elements inside Relative Card -->
+      <div class="badge early-bird">EARLY BIRD</div>
+      <div class="badge-new">NEW</div>
+
+      <div class="ticket-header">
+        <h3>Tech Summit Nigeria 2026</h3>
+        <span class="ticket-id">#TSN-2026</span>
+      </div>
+
+      <div class="ticket-body">
+        <p><strong>Date:</strong> November 20, 2026</p>
+        <p><strong>Venue:</strong> Main Auditorium, Lagos State</p>
+        <p class="ticket-desc">Experience cutting-edge technology, web architecture insights, and networking with
+          industry leaders.</p>
+      </div>
+
+      <!-- Absolute Footer Details inside Card -->
+      <div class="ticket-footer-info">
+        <span class="icon-star">⭐</span>
+        <span class="z-badge-note">Z-index qued</span>
+        <span class="badge-bottom-right">09:14</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. STICKY SECTION HEADING 2 -->
+  <h2 class="sticky-heading" id="z-sec">
+    <span>📐 Z-Index Stacking Laboratory</span>
+    <span class="tag">Order Control Demo</span>
+  </h2>
+
+  <!-- Z-INDEX SECTION -->
+  <section class="filler z-index-section">
+    <div class="z-container">
+      <p class="z-instruction">HTML Order vs Stacking Context</p>
+      <!-- Middle element in HTML (Box 2) has highest Z-Index -->
+      <div class="z-box box-1">
+        <span>Box 1</span>
+        <small>z-index: 1</small>
+      </div>
+      <div class="z-box box-2">
+        <span>Box 2 (Top)</span>
+        <small>z-index: 5</small>
+      </div>
+      <div class="z-box box-3">
+        <span>Box 3</span>
+        <small>z-index: 2</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. STICKY SECTION HEADING 3 -->
+  <h2 class="sticky-heading" id="info-sec">
+    <span>📖 Architectural Breakdown</span>
+    <span class="tag">Educational Notes</span>
+  </h2>
+
+  <!-- CONTENT / EDUCATIONAL SECTION -->
+  <section class="filler content-section">
+    <div class="info-card">
+      <h3>Layout Mechanics & Principles</h3>
+      <p>Ancral sheulf legerangnting oss accrear addissument Tech. Summit grank griat, frot ake eventemration the ratic
+        that qutraünt or for nerule are the surrit and 2026.</p>
+      <ul class="property-list">
+        <li><strong>Sticky:</strong> Locks items relative to viewport bounds once threshold is met.</li>
+        <li><strong>Absolute:</strong> Removes elements from normal flow, positioning relative to the nearest positioned
+          ancestor.</li>
+        <li><strong>Fixed:</strong> Pins elements directly to the browser window coordinate space.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. FIXED "BUY TICKET" BUTTON & BONUS TOP BUTTON -->
+  <div class="fixed-controls">
+    <button class="fixed-btn top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">
+      ↑ Top
+    </button>
+    <button class="fixed-btn buy-btn" onclick="alert('Proceeding to checkout workflow!')">
+      Buy Ticket
+    </button>
+  </div>
+
+</body>
+
+</html>

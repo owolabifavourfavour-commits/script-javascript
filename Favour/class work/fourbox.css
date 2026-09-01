@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 900px;
+  height: 400px;
+  position: relative;
+  border-radius: 10px;
+}
+
+
+/* GENERAL BOX STYLE */
+
+.box {
+  width: 180px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+
+/* STEP 1 */
+
+.box1 {
+  background-color: purple;
+  top: 70px;
+  left: 120px;
+  z-index: 1;
+}
+
+
+/* STEP 2 */
+
+.box2 {
+  background-color: blue;
+  top: 160px;
+  left: 220px;
+  z-index: 2;
+}
+
+
+/* STEP 3 */
+
+.box3 {
+  background-color: green;
+  top: 250px;
+  left: 320px;
+  z-index: 3;
+}
+
+
+/* STEP 4 */
+
+.box4 {
+  background-color: red;
+  top: 340px;
+  left: 420px;
+  z-index: 4;
+}
